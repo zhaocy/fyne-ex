@@ -26,13 +26,21 @@ func New() *ThemeX {
 	return theme
 }
 
+func Themex() *ThemeX {
+	return themex
+}
+
 var _ fyne.Theme = (*ThemeX)(nil)
 
-func (*ThemeX) Font(t fyne.TextStyle) fyne.Resource {
+func (tx *ThemeX) Font(t fyne.TextStyle) fyne.Resource {
 	if t.Italic {
 		return theme.DefaultTheme().Font(t)
 	}
-	return font.ResourceMSYHTTC
+	switch tx.font {
+	default:
+		return font.ResourceMSYHTTC
+	}
+
 }
 
 func (*ThemeX) Color(c fyne.ThemeColorName, v fyne.ThemeVariant) color.Color {
@@ -45,4 +53,8 @@ func (*ThemeX) Icon(n fyne.ThemeIconName) fyne.Resource {
 
 func (*ThemeX) Size(n fyne.ThemeSizeName) float32 {
 	return theme.DefaultTheme().Size(n)
+}
+
+func (tx *ThemeX) SetFont(s Font) {
+	tx.font = s
 }
