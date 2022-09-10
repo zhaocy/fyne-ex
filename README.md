@@ -1,2 +1,2 @@
-# fyne-font
-Fyne font library, supporting common English and Chinese fonts
+# fyne-theme
+Fyne theme library, supporting common English and Chinese fonts
