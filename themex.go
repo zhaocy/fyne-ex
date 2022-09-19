@@ -5,7 +5,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/theme"
-	"github.com/zhaocy/fyne-theme/font"
+	"github.com/zhaocy/fyne-ex/font"
 )
 
 var themex *ThemeX
